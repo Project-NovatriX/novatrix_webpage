@@ -21,7 +21,7 @@ const Header = () => {
     { key: "プロダクト", en: "Products", path: "/products", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
     { key: "ブログ", en: "Blog", path: "/blog", spacing: "ml-0.3 mr-0.3 min-w-[70px]" },
     { key: "ニュース", en: "News", path: "/news", spacing: "ml-0.3 mr-0.3 min-w-[80px]" },
-    { key: "FAQ", en: "FAQ", path: "/faq", spacing: "ml-0.3 mr-0.3 min-w-[50px]" },
+    { key: "メンバー", en: "member", path: "/faq", spacing: "ml-0.3 mr-0.3 min-w-[50px]" },
     { key: "お問い合わせ", en: "Contact", path: "/contact", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
   ];
 

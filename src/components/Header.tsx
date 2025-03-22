@@ -17,11 +17,11 @@ const Header = () => {
 
   const menuItems = [
     { key: "ホーム", en: "Home", path: "/", spacing: "ml-0.3 mr-0.5 min-w-[60px]" },
-    { key: "プロジェクト", en: "About", path: "/about", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
+    { key: "私達について", en: "About", path: "/about", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
     { key: "プロダクト", en: "Products", path: "/products", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
-    { key: "ブログ", en: "Blog", path: "/blog", spacing: "ml-0.3 mr-0.3 min-w-[70px]" },
-    { key: "ニュース", en: "News", path: "/news", spacing: "ml-0.3 mr-0.3 min-w-[80px]" },
-    { key: "メンバー", en: "member", path: "/faq", spacing: "ml-0.3 mr-0.3 min-w-[50px]" },
+    { key: "ブログ", en: "Blog", path: "/blog", spacing: "ml-0.3 mr-0.3 min-w-[40px]" },
+    { key: "ニュース", en: "News", path: "/news", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
+    { key: "メンバー", en: "member", path: "/faq", spacing: "ml-0.3 mr-4 min-w-[50px]" }, // 間隔を広げる
     { key: "お問い合わせ", en: "Contact", path: "/contact", spacing: "ml-0.3 mr-0.3 min-w-[100px]" },
   ];
 

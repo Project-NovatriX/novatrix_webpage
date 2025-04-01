@@ -3,7 +3,8 @@ import React, { useState, useEffect } from "react";
 import Hero1 from "./home/hero1";
 import Hero2 from "./home/hero2";
 import Hero3 from "./home/hero3";
-import { Hero4, Hero5 } from "./home/hero5";
+import Hero4 from "./home/hero4";
+import Hero5 from "./home/hero5";
 import LoadingScreen from "./components/LoadingScreen";
 
 export default function Home() {

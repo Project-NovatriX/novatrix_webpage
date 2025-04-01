@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 
-// 型定義
 type NewsItem = {
   id: number;
   title: string;

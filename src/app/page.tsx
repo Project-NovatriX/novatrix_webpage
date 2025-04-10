@@ -6,6 +6,7 @@ import Hero3 from "./home/hero3";
 import Hero4 from "./home/hero4";
 import Hero5 from "./home/hero5";
 import LoadingScreen from "./components/LoadingScreen";
+import SponsorSection from "./home/sponsor";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -87,6 +88,9 @@ export default function Home() {
         }`}
       >
         <Hero3 />
+      </div>
+      <div className="relative z-20">
+        <SponsorSection />
       </div>
       <div className="relative z-20">
         <Hero4 />

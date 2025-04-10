@@ -2,10 +2,11 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const AboutHero = () => {
   return (
-    <section className="w-full min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white px-8 py-32">
+    <section className="w-full min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white px-8 py-32">
       <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight text-center flex justify-center gap-3 flex-wrap">
         {["What", "is", "Project-NovatriX?"].map((word, index) => (
           <motion.span
@@ -23,7 +24,7 @@ const AboutHero = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }}
-        className="text-xl md:text-2xl text-center text-gray-300 mt-4"
+        className="text-xl md:text-2xl text-center text-gray-700 dark:text-gray-300 mt-4"
       >
         NovatriXとは？
       </motion.p>
@@ -33,14 +34,14 @@ const AboutHero = () => {
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="h-1 bg-white w-1/2 origin-right"
+          className="h-1 bg-gray-500 dark:bg-white w-1/2 origin-right"
         />
         <span className="relative z-10 text-2xl px-3">★</span>
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="h-1 bg-white w-1/2 origin-left"
+          className="h-1 bg-gray-500 dark:bg-white w-1/2 origin-left"
         />
       </div>
 
@@ -53,7 +54,7 @@ const AboutHero = () => {
           className="text-4xl md:text-5xl font-bold"
         >
           名前の由来
-          <span className="block text-xl md:text-2xl text-gray-300 mt-4">The Meaning Behind the Name</span>
+          <span className="block text-xl md:text-2xl text-gray-700 dark:text-gray-300 mt-4">The Meaning Behind the Name</span>
         </motion.div>
 
         <motion.div 
@@ -61,7 +62,7 @@ const AboutHero = () => {
           whileInView={{ opacity: 1, scale: 1 }} 
           viewport={{ once: true, amount: 0.3 }} 
           transition={{ duration: 1, ease: "easeOut", delay: 0.6 }} 
-          className="space-y-6 text-left text-gray-300 text-lg md:text-xl leading-relaxed"
+          className="space-y-6 text-left text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed"
         >
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -92,7 +93,7 @@ const AboutHero = () => {
           className="text-4xl md:text-5xl font-bold"
         >
           活動内容
-          <span className="block text-xl md:text-2xl text-gray-300 mt-4 mb-8">What We Do</span>
+          <span className="block text-xl md:text-2xl text-gray-700 dark:text-gray-300 mt-4 mb-8">What We Do</span>
         </motion.div>
 
         <motion.div 
@@ -100,7 +101,7 @@ const AboutHero = () => {
           whileInView={{ opacity: 1, x: 0 }} 
           viewport={{ once: true, amount: 0.3 }} 
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }} 
-          className="w-full max-w-4xl space-y-8 text-left text-gray-300 text-lg md:text-xl leading-relaxed"
+          className="w-full max-w-4xl space-y-8 text-left text-gray-700 dark:text-gray-300 text-lg md:text-xl leading-relaxed"
         >
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -126,7 +127,6 @@ const AboutHero = () => {
               <ul className="pl-6 space-y-1">
                 <li>– 動画編集</li>
                 <li>– サムネイル制作</li>
-                <li>– 音声葺き替え</li>
               </ul>
             </li>
             <li>
@@ -143,11 +143,11 @@ const AboutHero = () => {
         viewport={{ once: true, amount: 0.3 }} 
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.7 }} 
       >
-        <motion.h3 className="text-4xl md:text-5xl font-bold text-white">
+        <motion.h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
           主な取り組み・実績
-          <span className="block text-xl md:text-2xl text-gray-300 mt-4">Major Initiatives & Achievements</span>
+          <span className="block text-xl md:text-2xl text-gray-700 dark:text-gray-300 mt-4">Major Initiatives & Achievements</span>
         </motion.h3>
-        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-300"
+        <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700 dark:text-gray-300"
           initial={{ opacity: 0, y: 30 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, amount: 0.3 }} 
@@ -165,9 +165,9 @@ const AboutHero = () => {
         viewport={{ once: true, amount: 0.3 }} 
         transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }} 
       >
-        <motion.h3 className="text-4xl md:text-5xl font-bold text-white">
+        <motion.h3 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white">
           スポンサー様
-          <span className="block text-xl md:text-2xl text-gray-300 mt-4">Supported by</span>
+          <span className="block text-xl md:text-2xl text-gray-700 dark:text-gray-300 mt-4">Supported by</span>
         </motion.h3>
         <motion.a 
           href="https://www.uniproject.jp/" 
@@ -179,8 +179,21 @@ const AboutHero = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.6 }}
         >
-          <div className="bg-white p-4 rounded-lg inline-block">
-            <img src="/UniProject.png" alt="UniProject" className="w-64 md:w-80" />
+          <div className="inline-block">
+            <Image
+              src="/UniProject_lightmode.png"
+              alt="UniProject"
+              width={320}
+              height={100}
+              className="block dark:hidden"
+            />
+            <Image
+              src="/Uniproject_darkmode.png"
+              alt="UniProject"
+              width={320}
+              height={100}
+              className="hidden dark:block"
+            />
           </div>
         </motion.a>
       </motion.div>

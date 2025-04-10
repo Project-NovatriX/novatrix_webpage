@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
   {
@@ -20,12 +20,6 @@ const projects = [
   {
     title: "Sample Project 1",
     description: "これはサンプルプロジェクトです",
-    image: "/background1.png",
-    link: "#",
-  },
-  {
-    title: "Sample Project 2",
-    description: "もう一つのサンプルプロジェクトです",
     image: "/background1.png",
     link: "#",
   },
@@ -74,59 +68,14 @@ const Slide: React.FC<SlideProps> = ({ project }) => (
 
 const Hero4 = () => {
   const scrollRef = React.useRef<HTMLDivElement>(null);
-  const [currentSlide, setCurrentSlide] = React.useState(0);
-
-  React.useEffect(() => {
-    const container = scrollRef.current;
-    if (!container) return;
-
-    const slideCount = projects.length;
-    const slideWidth = container.scrollWidth / slideCount;
-    
-    const handleScroll = () => {
-      const currentPosition = container.scrollLeft;
-      const targetPosition = Math.round(currentPosition / slideWidth) * slideWidth;
-      
-      if (targetPosition >= slideWidth * (slideCount - 1)) {
-        container.scrollTo({
-          left: 0,
-          behavior: "smooth",
-        });
-        setCurrentSlide(0);
-      } else if (targetPosition <= 0) {
-        container.scrollTo({
-          left: slideWidth * (slideCount - 1),
-          behavior: "smooth",
-        });
-        setCurrentSlide(slideCount - 1);
-      } else {
-        setCurrentSlide(Math.round(targetPosition / slideWidth));
-      }
-    };
-
-    const interval = setInterval(() => {
-      const currentPosition = container.scrollLeft;
-      const nextPosition = currentPosition + slideWidth;
-      
-      if (nextPosition >= slideWidth * (slideCount - 1)) {
-        container.scrollTo({ left: 0, behavior: "smooth" });
-        setCurrentSlide(0);
-      } else {
-        container.scrollTo({ left: nextPosition, behavior: "smooth" });
-        setCurrentSlide(prev => prev + 1);
-      }
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, []);
 
   return (
-    <section className="relative w-full bg-black text-white py-20 px-6 md:px-20 overflow-hidden">
-      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-white tracking-tight">制作したプロダクト</h2>
+    <section className="relative w-full bg-gray-100 dark:bg-black text-gray-900 dark:text-white py-20 px-6 md:px-20 overflow-hidden">
+      <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center text-gray-900 dark:text-white tracking-tight">制作したプロダクト</h2>
       <div className="relative">
-        <div className="absolute inset-0 bg-black/70 backdrop-blur-md z-10"></div>
+        <div className="absolute inset-0 bg-white/80 dark:bg-black/70 backdrop-blur-md z-10"></div>
         <div className="absolute inset-0 flex items-center justify-center z-20">
-          <div className="text-center text-white">
+          <div className="text-center text-gray-900 dark:text-white">
             <h3 className="text-5xl md:text-6xl font-extrabold leading-snug">
               Coming Soon
             </h3>

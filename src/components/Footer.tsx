@@ -8,23 +8,22 @@ export default function Footer() {
     <footer className="bg-gray-900 text-white text-center py-6 mt-10">
       <div className="container mx-auto flex flex-col items-center space-y-4">
         
-        {/* 1行目: コピーライト & GitHub */}
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-6">
           <p className="text-sm">&copy; 2025 Project-NovatriX. All Rights Reserved.</p>
           <div className="flex space-x-4">
-            <a 
-              href="https://github.com/Project-NovatriX" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://github.com/Project-NovatriX"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-gray-400 flex items-center space-x-2"
             >
               <FaGithub size={18} />
               <span>GitHub</span>
             </a>
-            <a 
-              href="https://twitter.com/your-x" 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href="https://twitter.com/your-x"
+              target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-gray-400 flex items-center space-x-2"
             >
               <FaXTwitter size={18} />
@@ -33,14 +32,13 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* 2行目: プライバシーポリシー・スーパーサンクス */}
         <div className="flex flex-col md:flex-row justify-between items-center w-full px-6 space-y-2 md:space-y-0 md:space-x-4">
           <nav className="flex space-x-4">
             <Link href="/privacy" className="hover:underline text-sm">プライバシーポリシー</Link>
           </nav>
 
           <p className="text-yellow-400 font-semibold text-center">
-            Special Thanks:{" "}
+            Supported by{" "}
             <a
               href="https://www.uniproject.jp/"
               target="_blank"

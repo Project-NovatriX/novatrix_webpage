@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { FaTwitter, FaGlobe, FaEnvelope } from "react-icons/fa";
 
 interface MemberProfileProps {
   name: string;
@@ -67,6 +68,22 @@ const MemberProfile: React.FC<MemberProfileProps> = ({ name, role, image, descri
               {detailDescription.split("<br />").map((line, index) => (
                 <p key={index} className="mb-4">{line}</p>
               ))}
+            </motion.div>
+            <motion.div
+              className="mt-6 flex items-center gap-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
+              <a href="https://x.com/Hoshikoma_0220" target="_blank" rel="noopener noreferrer">
+                <FaTwitter size={32} />
+              </a>
+              <a href="https://hoshikoma.com" target="_blank" rel="noopener noreferrer">
+                <FaGlobe size={32} />
+              </a>
+              <a href="mailto:contact@hoshikoma.com">
+                <FaEnvelope size={32} />
+              </a>
             </motion.div>
           </div>
         </div>

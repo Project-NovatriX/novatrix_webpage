@@ -27,10 +27,10 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gray-900 text-white py-5 shadow-md w-full">
+    <header className="bg-gray-900 text-white py-3 shadow-md w-full">
       <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-base font-bold whitespace-nowrap">
-          Project-NovatriX
+        <Link href="/" className="flex items-center">
+          <img src="/full_logo.svg" alt="Project-NovatriX Logo" className="h-12 w-auto" />
         </Link>
         <nav className="flex gap-x-1 flex-nowrap justify-end">
           {menuItems.map(({ key, en, path, spacing }) => (

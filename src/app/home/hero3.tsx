@@ -17,7 +17,7 @@ const Hero3 = () => {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await fetch("/api/news");
+        const res = await fetch("https://example.com/api/news?populate=*");
         const data = await res.json();
         setNews(data);
       } catch (error) {

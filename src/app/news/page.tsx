@@ -16,7 +16,7 @@ export default function NewsPage() {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_CMS_URL}/api/news?populate=*`);
+      const res = await fetch(`https://example.com/api/news?populate=*`);
       const data = await res.json();
       setNews(data.data);
     };

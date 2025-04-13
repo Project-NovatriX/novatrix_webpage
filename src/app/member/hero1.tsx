@@ -106,7 +106,7 @@ const Hero1 = () => {
           { label: "経験：", value: "公開までお待ち下さい" },
           { label: "学歴・経歴：", value: "S高等学校所属" },
         ]}
-        detailDescription="Project-NovatriXの立ち上げをはじめ、技術全般の統括や、ビジョンの策定を担当。<br />UI設計・サイト構築・運用フロー整備・撮影など幅広く対応可能。<br />また、イベント主催・団体立ち上げ・企業との交渉などマネジメント経験もあり。"
+        detailDescription="Project-NovatriXの立ち上げをはじめ、全体統括などを担当しています。<br />webページの作成や動画編集、動画撮影など幅広い分野を担当しております。"
       />
     </div>
   );

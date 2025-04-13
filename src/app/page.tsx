@@ -5,7 +5,6 @@ import Hero2 from "./home/hero2";
 import Hero3 from "./home/hero3";
 import Hero4 from "./home/hero4";
 import Hero5 from "./home/hero5";
-import LoadingScreen from "./components/LoadingScreen";
 import SponsorSection from "./home/sponsor";
 
 export default function Home() {
@@ -69,10 +68,6 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  if (isLoading) {
-    return <LoadingScreen loadingProgress={loadingProgress} onComplete={() => setIsLoading(false)} />;
-  }
 
   return (
     <main className="animate-openCurtain" style={{ background: 'var(--background-gradient)' }}>

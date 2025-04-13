@@ -4,13 +4,7 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 
-const backgrounds = [
-  "/background1.png",
-  "/background2.png",
-  "/background3.png",
-  "/background4.png",
-  "/background5.png"
-];
+const backgrounds = ["/background1.png"];
 
 const crossFadeVariants = {
   enter: { opacity: 0, scale: 1.05 },
@@ -82,10 +76,7 @@ const Hero1 = () => {
   const { x, y } = useParallax();
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % backgrounds.length);
-    }, 5000);
-    return () => clearInterval(interval);
+    setCurrentIndex(0);
   }, []);
 
   return (

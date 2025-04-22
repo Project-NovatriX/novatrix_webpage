@@ -11,15 +11,24 @@ type NewsItem = {
   slug: string;
 };
 
-const Hero3 = () => {
+const NewsSection = () => {
   const [news, setNews] = useState<NewsItem[]>([]);
 
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const res = await fetch("https://example.com/api/news?populate=*");
-        const data = await res.json();
-        setNews(data);
+        const res = await fetch("http://172.16.130.1:1337/api/news?populate=*");
+        const json = await res.json();
+
+        const items = json.data.map((item: any) => ({
+          id: item.id,
+          title: item.attributes.title,
+          date: item.attributes.date,
+          category: item.attributes.category,
+          slug: item.attributes.slug,
+        }));
+
+        setNews(items);
       } catch (error) {
         console.error("ニュースの取得に失敗しました", error);
       }
@@ -56,4 +65,4 @@ const Hero3 = () => {
   );
 };
 
-export default Hero3;
+export default NewsSection;

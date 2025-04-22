@@ -4,11 +4,16 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface NewsItem {
-  id: number;
+  id: string | number;
   title: string;
-  category: string;
-  published_at: string;
-  slug: string;
+  publishedAt?: string;
+  body?: any;
+  image?: {
+    url: string;
+  };
+  author?: {
+    email?: string;
+  };
 }
 
 export default function NewsPage() {
@@ -16,9 +21,25 @@ export default function NewsPage() {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const res = await fetch(`https://example.com/api/news?populate=*`);
-      const data = await res.json();
-      setNews(data.data);
+      try {
+        const res = await fetch("/api/news?depth=2");
+        const data = await res.json();
+        setNews(
+          Array.isArray(data?.docs)
+            ? data.docs.map((item: any) => ({
+                id: item.id,
+                title: item.title || "No Title",
+                publishedAt: item.publishedAt || "",
+                body: item.body || [],
+                image: item.image?.url ? { url: item.image.url } : undefined,
+                author: item.author || {},
+              }))
+            : []
+        );
+      } catch (error) {
+        console.error("Fetch error:", error);
+        setNews([{ id: 0, title: "Fetch error", publishedAt: "", body: [], image: undefined, author: {} }]);
+      }
     };
     fetchNews();
   }, []);
@@ -36,19 +57,24 @@ export default function NewsPage() {
 
       <div className="space-y-8 max-w-4xl mx-auto">
         {news.map((item, i) => (
-          <motion.a
+          <div
             key={item.id}
-            href={`/news/${item.slug}`}
-            className="block border-b border-gray-300 dark:border-gray-600 pb-6 hover:opacity-80 transition"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="flex justify-between items-start border-b border-gray-300 dark:border-gray-600 py-4"
           >
-            <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-              {item.published_at.slice(0, 10)}・{item.category}
+            <div className="text-sm text-gray-500 dark:text-gray-400 w-28 shrink-0">
+              {item.publishedAt?.slice(0, 10) ?? "No Date"}
             </div>
-            <div className="text-xl font-semibold">{item.title}</div>
-          </motion.a>
+            <div className="flex-1 px-4">
+              <div className="text-xs mb-1 text-gray-500 dark:text-gray-400">お知らせ</div>
+              <a
+                href={`/news/${item.id}`}
+                className="flex justify-between items-center group hover:opacity-80 transition"
+              >
+                <span className="font-semibold group-hover:underline">{item.title}</span>
+                <span className="text-lg ml-2">→</span>
+              </a>
+            </div>
+          </div>
         ))}
       </div>
     </section>
